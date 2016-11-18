@@ -67,7 +67,9 @@ func findNewFile(i0 []os.FileInfo, i1 []os.FileInfo) string {
                 break
             }
         }
-        if !found && !strings.HasPrefix(j1.Name(), ".com.google.Chrome.") {
+        if !found &&
+	        !strings.HasPrefix(j1.Name(), ".com.google.Chrome.") &&
+	        !strings.HasSuffix(j1.Name(), ".crdownload") {
             return j1.Name()
         }
     }
